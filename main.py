@@ -4,7 +4,7 @@ import nmap
 def print_scan_internet(iprange, portrange):
     nm = nmap.PortScanner()
     result = ""
-    nm.scan(iprange, portrange, '-v -sS')
+    nm.scan(iprange, portrange, '-v -sS -sV')
     for ip in nm.all_hosts():
         try:
             for port in nm[ip]['tcp'].keys():
